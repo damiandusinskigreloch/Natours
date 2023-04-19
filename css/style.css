@@ -35,7 +35,7 @@ body{
      rgba(126, 213, 111, 0.8),
       rgba(40, 180, 133, 0.8) ),
        url(../img/hero.jpg);
-    background-position: center;
+    background-position: top;
     background-size: cover;
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     /* make note about backface-visibility */
@@ -57,11 +57,13 @@ body{
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .heading-primary{
     color: #fff;
     text-transform: uppercase;
+    margin-bottom: 60px;
 }
 
 .heading-primary-main{
@@ -88,6 +90,33 @@ body{
     /* Shorthand animation */
     animation: moveInRight 1s ease-out;
 }
+
+.btn:link,
+.btn:visited{
+    display: inline-block;
+    padding: 15px 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 100px;
+    /* Shorthand transition */
+    transition: all .2s ease-in;
+}   
+    /* note this efect for future */
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active{
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white{
+    color: #777;
+    background-color: #fff;
+}
+
 
 @keyframes moveInLeft{
     0%{
