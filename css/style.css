@@ -38,6 +38,8 @@ body{
     background-position: center;
     background-size: cover;
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    /* make note about backface-visibility */
+    backface-visibility: hidden;
 }
 
 .logo-box{
@@ -67,8 +69,15 @@ body{
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 35px;
-    animation: moveInLeft ease-out;
-    animation-duration: 1s;
+    /* Shorthand animation */
+    animation: moveInLeft 1s ease-out;
+    
+    
+    /* make note aboute animation properties */
+    /* animation-duration: 1s; */
+    /* animation-timing-function: ease-out; */
+    /* animation-delay: 3s; */
+    /* animation-iteration-count: 3; */
 }
 
 .heading-primary-sub{
@@ -76,8 +85,8 @@ body{
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;  
-    animation: moveInRight ease-out;
-    animation-duration: 1s;  
+    /* Shorthand animation */
+    animation: moveInRight 1s ease-out;
 }
 
 @keyframes moveInLeft{
