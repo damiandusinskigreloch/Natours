@@ -90,9 +90,14 @@ body{
     /* Shorthand animation */
     animation: moveInRight 1s ease-out;
 }
-
+.btn-animated{
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+    /* The styles up to zero percent before the animation start */
+}
 .btn:link,
 .btn:visited{
+    position: relative;
     display: inline-block;
     padding: 15px 40px;
     text-decoration: none;
@@ -101,11 +106,15 @@ body{
     /* Shorthand transition */
     transition: all .2s ease-in;
 }   
+
+
     /* note this efect for future */
 .btn:hover{
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
+
 
 .btn:active{
     transform: translateY(-1px);
@@ -114,6 +123,28 @@ body{
 
 .btn-white{
     color: #777;
+    background-color: #fff;
+}
+
+.btn::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-white::after{
     background-color: #fff;
 }
 
@@ -143,5 +174,17 @@ body{
     100%{
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@keyframes moveInBottom{
+    0%{
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
     }
 }
